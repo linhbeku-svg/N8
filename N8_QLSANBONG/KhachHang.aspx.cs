@@ -282,7 +282,7 @@ namespace QuanLySanBong
 
             txtHoTen.Text = "";
             txtSoDienThoai.Text = "";
-            txtEmail.Text = "";
+            txtEmail.Text = ""; 
             txtDiaChi.Text = "";
 
             lblTieuDeForm.Text = "THÊM KHÁCH HÀNG";
