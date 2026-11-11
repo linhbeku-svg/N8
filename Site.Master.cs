@@ -1,4 +1,4 @@
-﻿
+
 using System;
 
 namespace QuanLySanBong
@@ -7,7 +7,7 @@ namespace QuanLySanBong
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Kiểm tra đăng nhập
+            // Kiểm tra người dùng đã đăng nhập chưa
             if (Session["MaTK"] == null)
             {
                 Response.Redirect("~/DangNhap.aspx");
@@ -16,17 +16,28 @@ namespace QuanLySanBong
 
             if (!IsPostBack)
             {
-                lblHoTen.Text = Session["HoTen"] != null
-                    ? Session["HoTen"].ToString()
-                    : Session["TenDangNhap"].ToString();
+                // Hiển thị họ tên
+                if (Session["HoTen"] != null)
+                {
+                    lblHoTen.Text = Session["HoTen"].ToString();
+                }
+                else
+                {
+                    lblHoTen.Text = Session["TenDangNhap"].ToString();
+                }
 
-                lblQuyen.Text = Session["Quyen"] != null
-                    ? Session["Quyen"].ToString()
-                    : "Người dùng";
+                // Hiển thị tên quyền được lưu trong Session
+                if (Session["Quyen"] != null)
+                {
+                    lblQuyen.Text = Session["Quyen"].ToString();
+                }
+                else
+                {
+                    lblQuyen.Text = "Người dùng";
+                }
             }
         }
 
-        // Đăng xuất
         protected void btnDangXuat_Click(object sender, EventArgs e)
         {
             Session.Clear();
