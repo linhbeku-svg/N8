@@ -1,4 +1,4 @@
-﻿
+
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="QuanLySanBong.SiteMaster" %>
 
 <!DOCTYPE html>
@@ -23,12 +23,13 @@
 
 <body class="bg-light">
 
-    <form id="form1" runat="server">
+    <!-- FORM CHINH -->
+    <form id="form1" runat="server" enctype="multipart/form-data">
 
         <div class="container-fluid">
             <div class="row min-vh-100">
 
-                <!-- MENU BÊN TRÁI -->
+                <!-- MENU BEN TRAI -->
                 <div class="col-12 col-md-3 col-lg-2 bg-dark text-white p-0">
 
                     <div class="p-3 border-bottom border-secondary">
@@ -40,92 +41,110 @@
 
                     <div class="p-3">
 
+                        <!-- TONG QUAN -->
                         <div class="text-secondary small fw-bold mb-2">
                             TỔNG QUAN
                         </div>
 
                         <div class="list-group list-group-flush mb-3">
-                            <a href="Default.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+
+                            <asp:HyperLink ID="lnkTrangChu" runat="server"
+                                NavigateUrl="~/Default.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-house me-2"></i>
                                 Trang chủ
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="ThongKe.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkThongKe" runat="server"
+                                NavigateUrl="~/ThongKe.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-chart-column me-2"></i>
                                 Thống kê
-                            </a>
+                            </asp:HyperLink>
+
                         </div>
 
+                        <!-- QUAN LY -->
                         <div class="text-secondary small fw-bold mb-2">
                             QUẢN LÝ
                         </div>
 
                         <div class="list-group list-group-flush mb-3">
 
-                            <a href="SanBong.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkSanBong" runat="server"
+                                NavigateUrl="~/SanBong.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-futbol me-2"></i>
                                 Sân bóng
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="BangGia.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkBangGia" runat="server"
+                                NavigateUrl="~/BangGia.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-tags me-2"></i>
                                 Bảng giá
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="KhachHang.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkKhachHang" runat="server"
+                                NavigateUrl="~/KhachHang.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-users me-2"></i>
                                 Khách hàng
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="DatSan.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkDatSan" runat="server"
+                                NavigateUrl="~/DatSan.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-calendar-check me-2"></i>
                                 Đặt sân
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="DichVu.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkDichVu" runat="server"
+                                NavigateUrl="~/DichVu.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-bell-concierge me-2"></i>
                                 Dịch vụ
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="HoaDon.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkHoaDon" runat="server"
+                                NavigateUrl="~/HoaDon.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-file-invoice me-2"></i>
                                 Hóa đơn
-                            </a>
+                            </asp:HyperLink>
 
-                            <a href="ThanhToan.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+                            <asp:HyperLink ID="lnkThanhToan" runat="server"
+                                NavigateUrl="~/ThanhToan.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-credit-card me-2"></i>
                                 Thanh toán
-                            </a>
+                            </asp:HyperLink>
+
                         </div>
 
+                        <!-- HE THONG -->
                         <div class="text-secondary small fw-bold mb-2">
                             HỆ THỐNG
                         </div>
 
                         <div class="list-group list-group-flush">
-                            <a href="TaiKhoan.aspx"
-                               class="list-group-item list-group-item-action bg-dark text-white border-secondary">
+
+                            <asp:HyperLink ID="lnkTaiKhoan" runat="server"
+                                NavigateUrl="~/TaiKhoan.aspx"
+                                CssClass="list-group-item list-group-item-action bg-dark text-white border-secondary">
                                 <i class="fa-solid fa-user-gear me-2"></i>
                                 Tài khoản
-                            </a>
+                            </asp:HyperLink>
+
                         </div>
 
                     </div>
                 </div>
 
-                <!-- KHU VỰC NỘI DUNG -->
+                <!-- KHU VUC NOI DUNG -->
                 <div class="col-12 col-md-9 col-lg-10 p-0">
 
-                    <!-- THANH TRÊN -->
+                    <!-- THANH TREN -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-3 py-3">
 
                         <span class="navbar-brand fw-bold text-primary">
@@ -156,7 +175,7 @@
 
                     </nav>
 
-                    <!-- NỘI DUNG TỪNG TRANG -->
+                    <!-- NOI DUNG TUNG TRANG -->
                     <main class="container-fluid p-3 p-md-4">
 
                         <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -164,7 +183,7 @@
 
                     </main>
 
-                    <!-- CHÂN TRANG -->
+                    <!-- CHAN TRANG -->
                     <footer class="bg-white border-top text-center text-secondary p-3">
                         © 2026 - Hệ thống quản lý sân bóng
                     </footer>
@@ -176,7 +195,7 @@
 
     </form>
 
-    <!-- Bootstrap JavaScript -->
+    <!-- BOOTSTRAP JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
