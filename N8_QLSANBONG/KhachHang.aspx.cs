@@ -295,6 +295,8 @@ namespace QuanLySanBong
             pnlThongBao.CssClass = "alert alert-" + loai;
             lblThongBao.Text = noiDung;
             pnlThongBao.Visible = true;
+
+            int tesst = 112121;
         }
     }
 }
